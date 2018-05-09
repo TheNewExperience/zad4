@@ -1,50 +1,21 @@
 import java.util.Scanner;
 
+// Zwracaj uwagę na algorytmy - nie dziel prostego algorytmu na metody itd 
+
 public class Main {
 
-
-
-
-
-    public static void main(String[] args)
-    {
-        Main main= new Main();
-        int i = main.numberToCheck();
-        main.checkParity(i);
-
-    }
-
-
-    public Main()
-    {
-
-    }
-
-    public int numberToCheck()
-    {
+    public Main() {
         System.out.println("Wprowadz liczbe: ");
         Scanner scanner = new Scanner(System.in);
-        int number = Integer.parseInt(scanner.nextLine());
-        return number;
+
+        if (Integer.parseInt(scanner.nextLine()) % 2 == 0) {
+            System.out.println("Liczba parzysta!");
+        } else {
+            System.out.println("Liczba nieparzysta!");
+        }
     }
 
-
-    public boolean checkParity(int numberToCheck)
-    {
-
-        boolean parityStatus;
-
-        if((numberToCheck%=2) == 0)
-        {
-            parityStatus=true;
-            System.out.println("Liczba parzysta!");
-        }
-        else
-            {
-                parityStatus=false;
-                System.out.println("Liczba nieparzysta!");
-            }
-
-        return parityStatus;
+    public static void main(String[] args) {
+        new Main();
     }
 }
